@@ -1,5 +1,6 @@
 package com.tms.trainerpages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,6 +42,8 @@ public class TrainerElements {
 	public void SignInButton() {
 		signIn.click();
 	}
+	
+	
 	
 	//checking profile page info
 	@FindBy(css = "div.col:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3")

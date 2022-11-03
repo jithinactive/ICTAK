@@ -5,8 +5,10 @@
     <classes>
       <class name="com.tms.scripts.TestClass">
         <methods>
+          <include name="invalidPass"/>
           <include name="quitBrowser"/>
-          <include name="invalidEmailPass"/>
+          <include name="validLogin"/>
+          <include name="invalidEmail"/>
           <include name="onSetup"/>
         </methods>
       </class> <!-- com.tms.scripts.TestClass -->
