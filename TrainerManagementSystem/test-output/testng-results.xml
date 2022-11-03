@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-03T09:54:17 IST" name="Default suite" finished-at="2022-11-03T09:54:48 IST" duration-ms="31379">
+    <groups>
+    </groups>
+    <test started-at="2022-11-03T09:54:17 IST" name="Default test" finished-at="2022-11-03T09:54:48 IST" duration-ms="31379">
+      <class name="com.tms.scripts.TestClass">
+        <test-method is-config="true" signature="onSetup()[pri:0, instance:com.tms.scripts.TestClass@9597028]" started-at="2022-11-03T09:54:17 IST" name="onSetup" finished-at="2022-11-03T09:54:34 IST" duration-ms="17165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onSetup -->
+        <test-method signature="invalidEmailPass()[pri:1, instance:com.tms.scripts.TestClass@9597028]" started-at="2022-11-03T09:54:34 IST" name="invalidEmailPass" finished-at="2022-11-03T09:54:37 IST" duration-ms="2992" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidEmailPass -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.tms.scripts.TestClass@9597028]" started-at="2022-11-03T09:54:37 IST" name="quitBrowser" finished-at="2022-11-03T09:54:48 IST" duration-ms="11071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.tms.scripts.TestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
