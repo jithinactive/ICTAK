@@ -3,6 +3,7 @@ package com.tms.signuppage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SignUpElements {
 	WebDriver driver;
@@ -36,5 +37,66 @@ public class SignUpElements {
 	private WebElement passwordRetype;
 	@FindBy(css="body > app-root > app-sign-up > form > button")
 	private WebElement SignupBtn;
+	
+	public SignUpElements(WebDriver driver)
+	{
+		this.driver=driver;
+		PageFactory.initElements(driver, this);//This will initiate Pagefactory elements.
+	}
+	
+	
+	public void setName(String strName)
+	{
+		name.sendKeys(strName);
+	}
+	public void setEmai1(String strEmail)
+	{
+		email.sendKeys(strEmail);
+	}
+	public void setMobNum(String strMobNum)
+	{
+		mobilenumber.sendKeys(strMobNum);
+	}
+	public void setAddress(String straddress)
+	{
+		Address.sendKeys(straddress);
+	}
+	public void setQualification(String strQualification)
+	{
+		Qualification.sendKeys(strQualification);
+	}
+	public void setSkillset(String strSkillset)
+	{
+		SkillSet.sendKeys(strSkillset);
+	}
+	public void setCurrentCompany(String strCurrentCompany)
+	{
+		currentCompany.sendKeys(strCurrentCompany);
+	}
+	public void setDesignation(String strDesignation)
+	{
+		Designation.sendKeys(strDesignation);
+	}
+	public void setImage(String strImage)
+	{
+		Image.sendKeys(strImage);
+	}
+	public void setdropdown(String strDropdown)
+	{
+		dropdown.sendKeys(strDropdown);
+	}
+	public void setPassword(String strPassword)
+	{
+		password.sendKeys(strPassword);
+	}
+	public void setRePassword(String strRePassword)
+	{
+		passwordRetype.sendKeys(strRePassword);	
+	}
+	public void clickSignup()
+	{
+		SignupBtn.click();
+	}
+	
 
 }
