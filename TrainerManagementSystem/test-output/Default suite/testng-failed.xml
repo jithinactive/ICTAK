@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tms.scripts.TestClass">
+      <class name="com.tms.scripts.TrainerProfile">
         <methods>
-          <include name="invalidPass"/>
+          <include name="TrainerProfileInfo"/>
           <include name="quitBrowser"/>
+          <include name="putDetails"/>
           <include name="validLogin"/>
-          <include name="invalidEmail"/>
           <include name="onSetup"/>
         </methods>
-      </class> <!-- com.tms.scripts.TestClass -->
+      </class> <!-- com.tms.scripts.TrainerProfile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

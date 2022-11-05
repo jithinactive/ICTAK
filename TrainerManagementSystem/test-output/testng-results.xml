@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-03T12:17:43 IST" name="Default suite" finished-at="2022-11-03T12:18:14 IST" duration-ms="30770">
+  <suite started-at="2022-11-05T12:45:30 IST" name="Default suite" finished-at="2022-11-05T12:46:14 IST" duration-ms="44213">
     <groups>
     </groups>
-    <test started-at="2022-11-03T12:17:43 IST" name="Default test" finished-at="2022-11-03T12:18:14 IST" duration-ms="30770">
-      <class name="com.tms.scripts.TestClass">
-        <test-method is-config="true" signature="onSetup()[pri:0, instance:com.tms.scripts.TestClass@1b7cc17c]" started-at="2022-11-03T12:17:43 IST" name="onSetup" finished-at="2022-11-03T12:17:55 IST" duration-ms="11309" status="PASS">
+    <test started-at="2022-11-05T12:45:30 IST" name="Default test" finished-at="2022-11-05T12:46:14 IST" duration-ms="44213">
+      <class name="com.tms.scripts.TrainerProfile">
+        <test-method is-config="true" signature="onSetup()[pri:0, instance:com.tms.scripts.TrainerProfile@67c27493]" started-at="2022-11-05T12:45:30 IST" name="onSetup" finished-at="2022-11-05T12:45:52 IST" duration-ms="21631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onSetup -->
-        <test-method signature="validLogin()[pri:4, instance:com.tms.scripts.TestClass@1b7cc17c]" started-at="2022-11-03T12:17:55 IST" name="validLogin" finished-at="2022-11-03T12:18:03 IST" duration-ms="8247" status="PASS">
+        <test-method signature="validLogin()[pri:4, instance:com.tms.scripts.TrainerProfile@67c27493]" started-at="2022-11-05T12:45:52 IST" name="validLogin" finished-at="2022-11-05T12:45:56 IST" duration-ms="3804" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLogin -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.tms.scripts.TestClass@1b7cc17c]" started-at="2022-11-03T12:18:03 IST" name="quitBrowser" finished-at="2022-11-03T12:18:14 IST" duration-ms="11077" status="PASS">
+        <test-method signature="TrainerProfileInfo()[pri:5, instance:com.tms.scripts.TrainerProfile@67c27493]" started-at="2022-11-05T12:45:56 IST" name="TrainerProfileInfo" finished-at="2022-11-05T12:45:56 IST" duration-ms="495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TrainerProfileInfo -->
+        <test-method signature="putDetails()[pri:7, instance:com.tms.scripts.TrainerProfile@67c27493]" started-at="2022-11-05T12:45:56 IST" name="putDetails" finished-at="2022-11-05T12:46:04 IST" duration-ms="7659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- putDetails -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.tms.scripts.TrainerProfile@67c27493]" started-at="2022-11-05T12:46:04 IST" name="quitBrowser" finished-at="2022-11-05T12:46:14 IST" duration-ms="10490" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
-      </class> <!-- com.tms.scripts.TestClass -->
+      </class> <!-- com.tms.scripts.TrainerProfile -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,10 +1,15 @@
 package com.tms.trainerpages;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+
 
 public class TrainerElements {
 
@@ -66,6 +71,7 @@ public class TrainerElements {
 	@FindBy(css = "#name")
 	public WebElement editName;
 	public void NameInput(String nameIn) {
+		editName.clear();
 		editName.sendKeys(nameIn);
 	}
 	
@@ -73,6 +79,7 @@ public class TrainerElements {
 	@FindBy(name = "email")
 	public WebElement editEmail;
 	public void editEmailInput(String emailIn) {
+		editEmail.clear();
 		editEmail.sendKeys(emailIn);
 	}
 	
@@ -80,6 +87,7 @@ public class TrainerElements {
 	@FindBy(css = "#phone")
 	public WebElement editPhone;
 	public void editPhoneInput(String phoneIn) {
+		editPhone.clear();
 		editPhone.sendKeys(phoneIn);
 	}
 	
@@ -87,6 +95,7 @@ public class TrainerElements {
 	@FindBy(css = "#address")
 	public WebElement editAddress;
 	public void editAddr(String addrIn) {
+		editAddress.clear();
 		editAddress.sendKeys(addrIn);
 	}
 	
@@ -94,6 +103,7 @@ public class TrainerElements {
 	@FindBy(css = "#h_qualification")
 	public WebElement editHQ;
 	public void HQInput(String hqIn) {
+		editHQ.clear();
 		editHQ.sendKeys(hqIn);
 	}
 	
@@ -101,6 +111,7 @@ public class TrainerElements {
 	@FindBy(css = "div.row:nth-child(5) > div:nth-child(2) > input")
 	public WebElement editSkill;
 	public void SkillInput(String skillIn) {
+		editSkill.clear();
 		editSkill.sendKeys(skillIn);
 	}
 	
@@ -108,6 +119,7 @@ public class TrainerElements {
 	@FindBy(css = "#company_name")
 	public WebElement editCompany;
 	public void companyInput(String companyIn) {
+		editCompany.clear();
 		editCompany.sendKeys(companyIn);
 	}
 	
@@ -115,14 +127,17 @@ public class TrainerElements {
 	@FindBy(css = "#designation")
 	public WebElement editDesignation;
 	public void designationInput(String designationIn) {
+		editDesignation.clear();
 		editDesignation.sendKeys(designationIn);
 	}
 	
 	//uploading profile photo
 	@FindBy(css = "#img")
 	public WebElement editPhoto;
-	public void photoInput() {
-		editPhoto.sendKeys("./src/main/resourses/profile2.jpg");
+	public void photoInput(String ProfileImage) {
+		editPhoto.clear();
+		editPhoto.sendKeys(ProfileImage);
+		
 	}
 	
 	
@@ -130,7 +145,7 @@ public class TrainerElements {
 	@FindBy(css = ".btn")
 	public WebElement saveEdit;
 	public void saveButton() {
-		saveEdit.click();
+		saveEdit.sendKeys(Keys.RETURN);
 	}
 	
 	//checking trainer allocation details

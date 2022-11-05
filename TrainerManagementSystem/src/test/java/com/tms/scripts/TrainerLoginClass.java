@@ -21,8 +21,8 @@ public class TrainerLoginClass extends TestBase {
 		
 		objElmt = new TrainerElements(driver);
 		//creating variables
-		String Email = ExcelUtility.getCellData(0, 0);
-		String Pass = ExcelUtility.getCellData(0, 1);
+		String Email = ExcelUtility.getCellData(2, 0);
+		String Pass = ExcelUtility.getCellData(2, 1);
 		//executing
 		objElmt.LoginClick();
 		objElmt.emailInput(Email);
@@ -41,8 +41,8 @@ public class TrainerLoginClass extends TestBase {
 		
 		objElmt = new TrainerElements(driver);
 		driver.navigate().refresh();
-		String Email = ExcelUtility.getCellData(1, 0);
-		String Pass = ExcelUtility.getCellData(1, 1);
+		String Email = ExcelUtility.getCellData(3, 0);
+		String Pass = ExcelUtility.getCellData(3, 1);
 		
 		objElmt.LoginClick();
 		objElmt.emailInput(Email);
@@ -60,8 +60,8 @@ public class TrainerLoginClass extends TestBase {
 		
 		objElmt = new TrainerElements(driver);
 		driver.navigate().refresh();
-		String Email = ExcelUtility.getCellData(2, 0);
-		String Pass = ExcelUtility.getCellData(2, 1);
+		String Email = ExcelUtility.getCellData(4, 0);
+		String Pass = ExcelUtility.getCellData(4, 1);
 		
 		objElmt.LoginClick();
 		objElmt.emailInput(Email);
@@ -74,21 +74,19 @@ public class TrainerLoginClass extends TestBase {
 		Assert.assertEquals(expAlert,actAlert);
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 4,enabled = true)
 	public void validLogin() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
 		driver.navigate().refresh();
-		String Email = ExcelUtility.getCellData(3, 0);
-		String Pass = ExcelUtility.getCellData(3, 1);
+		String Email = ExcelUtility.getCellData(5, 0);
+		String Pass = ExcelUtility.getCellData(5, 1);
 		
 		objElmt.LoginClick();
 		objElmt.emailInput(Email);
 		objElmt.passwd(Pass);
 		objElmt.SignInButton();
 		System.out.println("***Login Successful***");
-		String info = objElmt.ProfileCheck();
-		System.out.println(info);
 		
 	}
 	
