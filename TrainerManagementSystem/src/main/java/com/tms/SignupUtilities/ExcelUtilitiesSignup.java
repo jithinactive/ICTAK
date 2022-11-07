@@ -13,7 +13,7 @@ public class ExcelUtilitiesSignup  {
 	private static XSSFSheet ExcelSheet;
 	
 	public static String getCellData(int RowNum, int ColNUm) throws IOException {
-		FileInputStream ExcelFile = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/"+"ExcelFile.xlsx");
+		FileInputStream ExcelFile = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/"+"SignupExcel.xlsx");
 		
 		ExcelBook = new XSSFWorkbook(ExcelFile);
 		ExcelSheet = ExcelBook.getSheetAt(0);

@@ -9,39 +9,60 @@ public class SignUpElements {
 	WebDriver driver;
 	//Using PageFactory
 	//FindBy is an annotation used in Selenium
+	
 	@FindBy(css="li.nav-item:nth-child(3) > a")
 	private WebElement navbar;
+	
 	@FindBy(id="name")
 	private WebElement name;
+	
 	@FindBy(id="email")
 	private WebElement email;
+	
 	@FindBy(id="phone")
 	private WebElement mobilenumber;
+	
 	@FindBy(id="address")
 	private WebElement Address;
+	
 	@FindBy(id="h_qualification")
 	private WebElement Qualification;
+	
 	@FindBy(id="skillSet")
 	private WebElement SkillSet;
+	
 	@FindBy(id="company_name")
 	private WebElement currentCompany;
+	
 	@FindBy(id="designation")
 	private WebElement Designation;
+	
 	@FindBy(id="img")
-	private WebElement Image;
+	public WebElement Image;
+	
 	@FindBy(xpath="/html/body/app-root/app-sign-up/form/div[5]/div[2]/ng-multiselect-dropdown/div/div[1]/span")
 	private WebElement dropdown;
+	
+	@FindBy(css="li.multiselect-item-checkbox:nth-child(1) > div")
+	private WebElement selection;
+	
 	@FindBy(id="password")
 	private WebElement password;
+	
 	@FindBy(id="re_password")
 	private WebElement passwordRetype;
+	
 	@FindBy(css="body > app-root > app-sign-up > form > button")
 	private WebElement SignupBtn;
 	
+
 	public SignUpElements(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);//This will initiate Pagefactory elements.
+	}
+	public void navigation() {
+		navbar.click();
 	}
 	
 	
@@ -77,14 +98,18 @@ public class SignUpElements {
 	{
 		Designation.sendKeys(strDesignation);
 	}
-	public void setImage(String strImage)
+	
+	public void menu()
 	{
-		Image.sendKeys(strImage);
+		dropdown.click();
 	}
-	public void setdropdown(String strDropdown)
-	{
-		dropdown.sendKeys(strDropdown);
+	public void course() {
+		selection.click();
 	}
+	public void profPic(String strimage) {
+		Image.sendKeys(strimage);
+	}
+	
 	public void setPassword(String strPassword)
 	{
 		password.sendKeys(strPassword);

@@ -18,20 +18,27 @@ public class TestBase {
 	String driverPath1;
 	String driverPath2;
 	
-	public static void TestConfig() throws FileNotFoundException {
+	public static void TestConfig() {
 		
 		
 		prop=new Properties();
 		
 	
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/" + "config.properties");
-		
+			FileInputStream ip;
 			try {
+				ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/" + "config.properties");
 				prop.load(ip);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		
+			
+				
+			 
 		
 	}
 	
