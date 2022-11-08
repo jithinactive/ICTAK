@@ -1,35 +1,35 @@
 package com.tms.adminpages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class AdminElements {
+	
 	WebDriver driver;
-//	By loginlink=By.xpath("//*[@id=\"navbarNav\"]/ul/li[2]/a");
-//	By logid=By.name("email");
-//	By logpass=By.name("password");
-//	By signin=By.xpath("/html/body/app-root/app-login/main/form/button");
-//	
-//	public AdminElements(WebDriver driver)
-//	{
-//		this.driver=driver;
-//	}
-//	public void login(String logidval,String logpassval)
-//	{
-//		driver.findElement(loginlink).click();
-//		driver.findElement(logid).sendKeys("logidval");
-//		driver.findElement(logpass).sendKeys("logpassval");
-//		driver.findElement(signin).click();
-//	}
-	public AdminElements(WebDriver driver)
-	{
-		this.driver=driver;
+	
+	By empType=By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td[8]/select");
+	By approveBtn=By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td[9]/a[1]");
+	By rejectBtn=By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td[9]/a[2]");
+	By allocCrsID=By.xpath("/html/body/app-root/app-allocation/form/div[3]/div[2]/select");
+	By allocBatchID=By.xpath("/html/body/app-root/app-allocation/form/div[4]/div[1]/select");
+	By time=By.xpath("/html/body/app-root/app-allocation/form/div[4]/div[2]/input");
+	By start=By.xpath("/html/body/app-root/app-allocation/form/div[5]/div[1]/input");
+	By end=By.xpath("/html/body/app-root/app-allocation/form/div[5]/div[2]/input");
+	
+	public AdminElements(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[2]/a")
 	public WebElement linkLogin;
 	public void linkLoginClick()
@@ -39,72 +39,77 @@ public class AdminElements {
 	
 	@FindBy(name = "email")
 	public WebElement email;
-	public void emailInput(String mailID)
+	public void loginId(String logid)
 	{
-		email.sendKeys(mailID);
+		email.sendKeys(logid);
 	}
 
 	@FindBy(name = "password")
 	public WebElement password;
-	public void passwd(String pwd)
+	public void passwd(String logpwd)
 	{
-		password.sendKeys(pwd);
+		password.sendKeys(logpwd);
 	}
 
-	@FindBy(xpath = "\"/html/body/app-root/app-login/main/form/button\"")
+	@FindBy(xpath = "/html/body/app-root/app-login/main/form/button")
 	public WebElement signIn;
 	public void SignInButton()
 	{
 		signIn.click();
 	}
-	
-	@FindBy(xpath = "/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td[8]/select")
-	public Select empType;
-	public void empTypeDrop()
+	public void empTypeDrop(String empType2) 
 	{
-		empType.selectByVisibleText("Internal");
+		driver.findElement(rejectBtn).click();
+		Select empType1= new Select(driver.findElement(empType));
+		empType1.selectByVisibleText(empType2);
+		driver.findElement(approveBtn).click();
 	}
-	
-	@FindBy(xpath = "/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td[9]/a[1]")
-	public WebElement approveBtn;
-	public void ApproveButton()
-	{
-		approveBtn.click();
-	}
-	
-	@FindBy(xpath = "/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td[9]/a[2]")
-	public WebElement rejectBtn;
-	public void RejectButton()
-	{
-		rejectBtn.click();
-	}
-	
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[2]/a")
 	public WebElement allocLink;
 	public void Alloc()
 	{
 		allocLink.click();
 	}
-	
 	@FindBy(xpath = "/html/body/app-root/app-search-trainer/div/div[2]/table/tbody/tr[1]/td[10]/a")
 	public WebElement allocBtn;
 	public void AllocBtn()
 	{
 		allocBtn.click();
 	}
-	@FindBy(xpath = "//*[@id=\"courseid\"]")
-	public Select allocCrsID;
-	public void AllocCrsID()
+	public void idPrint()
 	{
-		allocCrsID.selectByVisibleText("FSD");
+		WebElement id=driver.findElement(By.xpath("/html/body/app-root/app-allocation/form/div[1]/div[1]/input"));
+		System.out.println(id.getText());
 	}
-	@FindBy(xpath = "//*[@id=\"batchid\"]")
-	public Select allocBatchID;
-	public void AllocBatchID()
+	public void allocDropCrs(String Crs) 
 	{
-		allocBatchID.selectByVisibleText("FSD001");
+		Select allocCrsID1= new Select(driver.findElement(allocCrsID));
+		List<WebElement> lst= allocCrsID1.getOptions();
+		for(WebElement options:lst)
+			System.out.println(options.getText());
+			allocCrsID1.selectByVisibleText(Crs);	
 	}
-	
+	public void allocDropBatch(String Batch)
+	{
+		
+		Select allocBatchID1=new Select(driver.findElement(allocBatchID));
+		List<WebElement> lst= allocBatchID1.getOptions();
+		for(WebElement options:lst)
+			System.out.println(options.getText());
+			allocBatchID1.selectByVisibleText(Batch);
+	}
+	public void timeSet()
+	{
+		driver.findElement(time).sendKeys("1010");
+	}
+	public void startDate()
+	{
+		driver.findElement(start).sendKeys("01042022");
+	}
+	public void endDate()
+	{
+		driver.findElement(end).sendKeys("02042022");
+	}
 	@FindBy(xpath = "//*[@id=\"venue\"]")
 	public WebElement meetLink;
 	public void MeetLink()
@@ -116,12 +121,18 @@ public class AdminElements {
 	public void FinalAllocBtn()
 	{
 		finalAllocBtn.click();
-	}
-	
+	}	
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[3]/a")
 	public WebElement viewAllocLink;
 	public void ViewAlloc()
 	{
 		viewAllocLink.click();
 	}
+	@FindBy(xpath = "/html/body/app-root/app-viewallocation/div[1]/app-adminnav/nav/div/div/ul/li[4]/a")
+	public WebElement logout;
+	public void logOut()
+	{
+		logout.click();
+	}
+
 }
