@@ -11,7 +11,7 @@ import com.tms.trainerconstants.AutomationConstants;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerLoginClass extends TestBase {
+public class TrainerLogin extends TestBase {
 	
 	//creating an object of TrainerElements class
 	TrainerElements objElmt;

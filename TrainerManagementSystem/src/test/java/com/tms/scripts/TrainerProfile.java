@@ -9,7 +9,7 @@ import org.testng.internal.Utils;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerProfile extends TrainerLoginClass{
+public class TrainerProfile extends TrainerLogin{
 	
 
 	//creating an object of TrainerElements class
@@ -68,6 +68,8 @@ public class TrainerProfile extends TrainerLoginClass{
 		
 		//clicking edit button
 		objElmt.saveButton();
+		Thread.sleep(5000);
+	
 		
 	}
 	
