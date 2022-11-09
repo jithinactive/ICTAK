@@ -2,14 +2,16 @@ package com.tms.signuptest;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
+//import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 //import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.tms.SignupUtilities.ExcelUtilitiesSignup;
@@ -47,23 +49,26 @@ public class SignupClass extends TestBase {
 		String imgLoad = strimage.getAbsolutePath();
 		objSign.profPic(imgLoad);
 		
-       //objSign.coursemenu("Full Stack Development");
-		/*driver.get("https://trainermanagement.herokuapp.com/signup");
-		driver.findElement(By.cssSelector("div[class=multiselect-dropdown]"));
-		WebElement course=driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div:nth-child(2)"));
-		course.click();*/
-		
-		WebElement selectMyElement = driver.findElement(By.cssSelector("div[class=multiselect-dropdown]")); 
-		selectMyElement.click();
-		WebElement course=driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div"));
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50)); //here, wait time is 50 seconds
+		/*objSign.Signdrop("Full Stack Development ");
+		objSign.Signdrop("Data Science & Analytics ");
+		objSign.Signdrop("Cyber Security Analyst ");
+		objSign.Signdrop("Robotic Process Automation ");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));*/
+		WebElement down1 = driver.findElement(By.cssSelector("div[class=multiselect-dropdown]"))
+				;
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", down1);
 
-		wait.until(ExpectedConditions.visibilityOf(course)); //this will wait for elememt to be visible for 20 seconds
-		course.click(); //now it clicks on element
-		
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				down1.sendKeys(Keys.RETURN);
 
-		//Actions keyDown = new Actions(driver);
-		//keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN)).perform();
+				  WebElement var1 = driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div"));
+				  var1.click();
+		
 		
 		String paswrdVal=ExcelUtilitiesSignup.getCellData(2, 8);
 		objSign.setPassword(paswrdVal);

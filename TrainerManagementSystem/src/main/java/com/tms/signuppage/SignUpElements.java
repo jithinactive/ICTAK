@@ -1,11 +1,13 @@
 package com.tms.signuppage;
 
+
+//import java.util.List;
+
 //import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-//import org.openqa.selenium.support.ui.Select;
 //import org.openqa.selenium.support.ui.Select;
 
 public class SignUpElements {
@@ -45,6 +47,8 @@ public class SignUpElements {
 	
 	//@FindBy(css="div[class=multiselect-dropdown]")
 	//public WebElement selection;
+	//By course=By.cssSelector("div[class=multiselect-dropdown]");
+	
 	
 	@FindBy(id="password")
 	private WebElement password;
@@ -103,12 +107,14 @@ public class SignUpElements {
 	public void profPic(String strimage) {
 		Image.sendKeys(strimage);
 	}
-	/*By selection=By.cssSelector("div[class=multiselect-dropdown]");
-	
-   public void coursemenu(String strcourse) {
-    	Select ddcourse=new Select(driver.findElement(selection));
-    	ddcourse.selectByVisibleText(strcourse);
-    }*/
+	/*public void Signdrop(String strmenu) {
+		Select course1=new Select(driver.findElement(course));
+		List <WebElement> first =course1.getOptions();
+		for(WebElement options:first)
+			System.out.println(options.getText());
+			course1.selectByVisibleText(strmenu);
+		
+	}*/
 	
 	public void setPassword(String strPassword)
 	{
