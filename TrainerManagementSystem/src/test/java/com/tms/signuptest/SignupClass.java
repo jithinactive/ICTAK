@@ -54,8 +54,7 @@ public class SignupClass extends TestBase {
 		objSign.Signdrop("Cyber Security Analyst ");
 		objSign.Signdrop("Robotic Process Automation ");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));*/
-		WebElement down1 = driver.findElement(By.cssSelector("div[class=multiselect-dropdown]"))
-				;
+		WebElement down1 = driver.findElement(By.cssSelector("div[class=multiselect-dropdown]"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", down1);
 
 				try {
@@ -64,7 +63,7 @@ public class SignupClass extends TestBase {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				down1.sendKeys(Keys.RETURN);
+				down1.click();
 
 				  WebElement var1 = driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div"));
 				  var1.click();
@@ -75,7 +74,7 @@ public class SignupClass extends TestBase {
 		String repassVal=ExcelUtilitiesSignup.getCellData(2, 9);
 		objSign.setRePassword(repassVal);
 		
-		objSign.clickSignup();
+//		objSign.clickSignup();
 		}
 	
 
