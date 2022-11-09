@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tms.scripts.TrainerAlloaction">
+      <class name="com.tms.scripts.SignupTest">
         <methods>
-          <include name="allocCheck"/>
+          <include name="Signup"/>
           <include name="quitBrowser"/>
           <include name="onSetup"/>
         </methods>
-      </class> <!-- com.tms.scripts.TrainerAlloaction -->
+      </class> <!-- com.tms.scripts.SignupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

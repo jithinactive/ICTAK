@@ -20,13 +20,13 @@ public class SignupTest extends TestBase{
 	objSign.course();
 }*/
 
-//	@Test(priority=1)
- /* public void Signup() {
+@Test(priority=1)
+ public void Signup() {
   
   driver.get("https://trainermanagement.herokuapp.com/signup");
-  driver.findElement(By.xpath("/html/body/app-root/app-sign-up/form/div[5]/div[2]/ng-multiselect-dropdown/div/div[1]/span")).click()
+  driver.findElement(By.cssSelector("div[class=multiselect-dropdown]")).click()
 ;
   WebElement var1 = driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div"));
   var1.click();
-	}*/
+}
 }
