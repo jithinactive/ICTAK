@@ -1,9 +1,12 @@
 package com.tms.signuppage;
 
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+//import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.support.ui.Select;
 
 public class SignUpElements {
 	WebDriver driver;
@@ -40,11 +43,8 @@ public class SignUpElements {
 	@FindBy(id="img")
 	public WebElement Image;
 	
-	@FindBy(xpath="/html/body/app-root/app-sign-up/form/div[5]/div[2]/ng-multiselect-dropdown/div/div[1]/span")
-	private WebElement dropdown;
-	
-	@FindBy(css="li.multiselect-item-checkbox:nth-child(1) > div")
-	private WebElement selection;
+	//@FindBy(css="div[class=multiselect-dropdown]")
+	//public WebElement selection;
 	
 	@FindBy(id="password")
 	private WebElement password;
@@ -99,16 +99,16 @@ public class SignUpElements {
 		Designation.sendKeys(strDesignation);
 	}
 	
-	public void menu()
-	{
-		dropdown.click();
-	}
-	public void course() {
-		selection.click();
-	}
+	
 	public void profPic(String strimage) {
 		Image.sendKeys(strimage);
 	}
+	/*By selection=By.cssSelector("div[class=multiselect-dropdown]");
+	
+   public void coursemenu(String strcourse) {
+    	Select ddcourse=new Select(driver.findElement(selection));
+    	ddcourse.selectByVisibleText(strcourse);
+    }*/
 	
 	public void setPassword(String strPassword)
 	{

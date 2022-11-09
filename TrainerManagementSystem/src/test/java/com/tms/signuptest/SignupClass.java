@@ -2,7 +2,14 @@ package com.tms.signuptest;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.By;
+//import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.tms.SignupUtilities.ExcelUtilitiesSignup;
@@ -17,7 +24,8 @@ public class SignupClass extends TestBase {
 		objSign=new SignUpElements(driver);
 		
 		objSign.navigation();
-		String nameVal=ExcelUtilitiesSignup.getCellData(2, 0);
+		
+	String nameVal=ExcelUtilitiesSignup.getCellData(2, 0);
 		objSign.setName(nameVal);
 		String mailVal=ExcelUtilitiesSignup.getCellData(2, 1);
 		objSign.setEmai1(mailVal);
@@ -39,14 +47,29 @@ public class SignupClass extends TestBase {
 		String imgLoad = strimage.getAbsolutePath();
 		objSign.profPic(imgLoad);
 		
-		//dropdown
-		objSign.menu();
-		objSign.course();
+       //objSign.coursemenu("Full Stack Development");
+		/*driver.get("https://trainermanagement.herokuapp.com/signup");
+		driver.findElement(By.cssSelector("div[class=multiselect-dropdown]"));
+		WebElement course=driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div:nth-child(2)"));
+		course.click();*/
+		
+		WebElement selectMyElement = driver.findElement(By.cssSelector("div[class=multiselect-dropdown]")); 
+		selectMyElement.click();
+		WebElement course=driver.findElement(By.cssSelector("li.multiselect-item-checkbox:nth-child(1) > div"));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50)); //here, wait time is 50 seconds
+
+		wait.until(ExpectedConditions.visibilityOf(course)); //this will wait for elememt to be visible for 20 seconds
+		course.click(); //now it clicks on element
+		
+
+		//Actions keyDown = new Actions(driver);
+		//keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN)).perform();
 		
 		String paswrdVal=ExcelUtilitiesSignup.getCellData(2, 8);
 		objSign.setPassword(paswrdVal);
 		String repassVal=ExcelUtilitiesSignup.getCellData(2, 9);
 		objSign.setRePassword(repassVal);
+		
 		objSign.clickSignup();
 		}
 	
