@@ -1,5 +1,6 @@
 package com.tms.adminpages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -59,10 +60,17 @@ public class AdminElements {
 	}
 	public void empTypeDrop(String empType2) 
 	{
-		driver.findElement(rejectBtn).click();
-		Select empType1= new Select(driver.findElement(empType));
+		//driver.findElement(rejectBtn).click();
+		List<WebElement> row=driver.findElements(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr/td[9]"));
+		System.out.println("Rows=========="+row.size());
+		Select empType1= new Select(driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[8]/select")));
 		empType1.selectByVisibleText(empType2);
-		driver.findElement(approveBtn).click();
+		WebElement AprBtn=driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[9]/a[1]"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+//		Actions action=new Actions(driver);
+//		action.moveToElement(driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[9]/a[2]"))).build().perform();
+		System.out.println(AprBtn.getText());
+		AprBtn.click();
 	}
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[2]/a")
 	public WebElement allocLink;

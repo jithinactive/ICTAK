@@ -17,7 +17,7 @@ public class AdminTest extends TestBase {
 	
 	AdminElements obj;
 	
-	@Test(priority = 1)
+	@Test(priority = 1,enabled = false)
 	public void invalidMail() throws IOException
 	{
 		obj=new AdminElements(driver);
@@ -106,7 +106,7 @@ public class AdminTest extends TestBase {
 		obj.ViewAlloc();
 		
 	}
-	@Test(priority = 9, enabled= true)
+	@Test(priority = 9, enabled= false)
 	public void logout()
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
