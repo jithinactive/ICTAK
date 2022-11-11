@@ -30,7 +30,7 @@ public class AdminTest extends TestBase {
 		obj.SignInButton();
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void invalidPass() throws IOException
 	{
 		obj=new AdminElements(driver);
@@ -42,7 +42,7 @@ public class AdminTest extends TestBase {
 		obj.SignInButton();
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3, enabled = false)
 	public void invalidMailPass() throws IOException
 	{
 		obj=new AdminElements(driver);
@@ -54,7 +54,7 @@ public class AdminTest extends TestBase {
 		obj.SignInButton();
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 4, enabled = true)
 	public void successLog() throws IOException
 	{
 		obj=new AdminElements(driver);
