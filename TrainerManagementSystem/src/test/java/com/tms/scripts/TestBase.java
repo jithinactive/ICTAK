@@ -66,12 +66,12 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
-//	@AfterTest
-//	public void quitBrowser() throws Exception {
-//		Thread.sleep(10000);
-//		if(driver!=null) {
-//			driver.quit();
-//		}
-//	}
+	@AfterTest
+	public void quitBrowser() throws Exception {
+		Thread.sleep(10000);
+		if(driver!=null) {
+			driver.quit();
+		}
+	}
 
 }
