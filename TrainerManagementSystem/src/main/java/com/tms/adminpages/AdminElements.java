@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -60,16 +61,23 @@ public class AdminElements {
 	}
 	public void empTypeDrop(String empType2) 
 	{
-		//driver.findElement(rejectBtn).click();
 		List<WebElement> row=driver.findElements(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr/td[9]"));
 		System.out.println("Rows=========="+row.size());
+		List<WebElement> col=driver.findElements(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr[1]/td"));
+		System.out.println("Cols=========="+col.size());
+		//driver.findElement(rejectBtn).click();
 		Select empType1= new Select(driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[8]/select")));
 		empType1.selectByVisibleText(empType2);
-		WebElement AprBtn=driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[9]/a[1]"));
+	}
+	public void AprBtn()
+	{
+		List<WebElement> row=driver.findElements(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr/td[9]"));
+		System.out.println("Rows=========="+row.size());
+		WebElement AprBtn=driver.findElement(By.cssSelector("body > app-root > app-admindash > div > div > table > tbody > tr:nth-child("+row.size()+") > td:nth-child(9) > a.btn.btn-success"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		System.out.println(AprBtn.getText());
 //		Actions action=new Actions(driver);
 //		action.moveToElement(driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[9]/a[2]"))).build().perform();
-		System.out.println(AprBtn.getText());
 		AprBtn.click();
 	}
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[2]/a")
@@ -78,10 +86,17 @@ public class AdminElements {
 	{
 		allocLink.click();
 	}
-	@FindBy(xpath = "/html/body/app-root/app-search-trainer/div/div[2]/table/tbody/tr[1]/td[10]/a")
-	public WebElement allocBtn;
+	public void AllocLink(String srcmail)
+	{
+		WebElement search;
+		search=driver.findElement(By.xpath("/html/body/app-root/app-search-trainer/div/div[1]/input"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		search.sendKeys(srcmail);	
+	}
 	public void AllocBtn()
 	{
+		WebElement allocBtn;
+		allocBtn=driver.findElement(By.cssSelector("body > app-root > app-search-trainer > div > div.scoll > table > tbody > tr > td:nth-child(10) > a"));
 		allocBtn.click();
 	}
 	public void idPrint()
@@ -95,16 +110,15 @@ public class AdminElements {
 		List<WebElement> lst= allocCrsID1.getOptions();
 		for(WebElement options:lst)
 			System.out.println(options.getText());
-			allocCrsID1.selectByVisibleText(Crs);	
+		allocCrsID1.selectByVisibleText(Crs);
 	}
 	public void allocDropBatch(String Batch)
 	{
-		
 		Select allocBatchID1=new Select(driver.findElement(allocBatchID));
 		List<WebElement> lst= allocBatchID1.getOptions();
 		for(WebElement options:lst)
 			System.out.println(options.getText());
-			allocBatchID1.selectByVisibleText(Batch);
+		allocBatchID1.selectByVisibleText(Batch);
 	}
 	public void timeSet()
 	{
@@ -129,7 +143,8 @@ public class AdminElements {
 	public void FinalAllocBtn()
 	{
 		finalAllocBtn.click();
-	}	
+	}
+	
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[3]/a")
 	public WebElement viewAllocLink;
 	public void ViewAlloc()
@@ -142,5 +157,6 @@ public class AdminElements {
 	{
 		logout.click();
 	}
+	
 
 }
