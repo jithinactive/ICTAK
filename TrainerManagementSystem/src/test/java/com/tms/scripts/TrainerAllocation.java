@@ -12,7 +12,7 @@ public class TrainerAllocation extends TrainerProfile {
 
 	TrainerElements objElmt;
 	
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 17, enabled = true)
 	public void allocCheck() throws IOException {
 		
 		objElmt = new TrainerElements(driver);

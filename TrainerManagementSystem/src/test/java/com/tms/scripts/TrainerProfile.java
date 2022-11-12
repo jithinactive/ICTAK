@@ -9,7 +9,7 @@ import org.testng.internal.Utils;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerProfile extends TrainerLogin{
+public class TrainerProfile extends TrainerLogin {
 	
 
 	//creating an object of TrainerElements class
@@ -17,7 +17,7 @@ public class TrainerProfile extends TrainerLogin{
 		//TrainerLoginClass login;
 	
 	//Checking Profile Info
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 15, enabled = true)
 	public void TrainerProfileInfo() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
@@ -36,7 +36,7 @@ public class TrainerProfile extends TrainerLogin{
 	*/
 	
 	//entering all details
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 16, enabled = true)
 	public void putDetails() throws IOException, InterruptedException {
 		
 		objElmt = new TrainerElements(driver);
