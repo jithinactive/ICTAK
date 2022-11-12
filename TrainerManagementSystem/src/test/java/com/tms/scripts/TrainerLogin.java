@@ -11,12 +11,12 @@ import com.tms.trainerconstants.AutomationConstants;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerLoginClass extends TestBase {
+public class TrainerLogin extends TestBase {
 	
 	//creating an object of TrainerElements class
 	TrainerElements objElmt;
 	
-	@Test(priority = 1,enabled = false)
+	@Test(priority = 11,enabled = false)
 	public void invalidEmailPass() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
@@ -36,7 +36,7 @@ public class TrainerLoginClass extends TestBase {
 		
 	}
 	
-	@Test(priority = 2,enabled = false)
+	@Test(priority = 12,enabled = false)
 	public void invalidEmail() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
@@ -55,7 +55,7 @@ public class TrainerLoginClass extends TestBase {
 		Assert.assertEquals(expAlert,actAlert);
 	}
 	
-	@Test(priority = 3,enabled = false)
+	@Test(priority = 13,enabled = false)
 	public void invalidPass() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
@@ -74,7 +74,7 @@ public class TrainerLoginClass extends TestBase {
 		Assert.assertEquals(expAlert,actAlert);
 	}
 	
-	@Test(priority = 4,enabled = true)
+	@Test(priority = 14,enabled = true)
 	public void validLogin() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
