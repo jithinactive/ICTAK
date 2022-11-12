@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import com.tms.SignupUtilities.ExcelUtilitiesSignup;
-import com.tms.base.TestBase;
+import com.tms.scripts.TestBase;
 import com.tms.signuppage.SignUpElements;
 
 public class SignupClass extends TestBase {
