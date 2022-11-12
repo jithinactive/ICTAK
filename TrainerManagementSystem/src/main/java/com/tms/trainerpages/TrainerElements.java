@@ -115,13 +115,7 @@ public class TrainerElements {
 		editSkill.sendKeys(skillIn);
 	}
 	
-	//entering company name
-	@FindBy(css = "#company_name")
-	public WebElement editCompany;
-	public void companyInput(String companyIn) {
-		editCompany.clear();
-		editCompany.sendKeys(companyIn);
-	}
+
 	
 	//entering designation
 	@FindBy(css = "#designation")
