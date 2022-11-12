@@ -13,11 +13,12 @@ public class TrainerAllocation extends TrainerProfile {
 	TrainerElements objElmt;
 	
 	@Test(priority = 17, enabled = true)
-	public void allocCheck() throws IOException {
+	public void allocCheck() throws IOException, InterruptedException {
 		
 		objElmt = new TrainerElements(driver);
 	
 		objElmt.myAlloc();
+		 Thread.sleep(5000);
 		
 		/*
 		String actStDate = objElmt.StartDateCheck();

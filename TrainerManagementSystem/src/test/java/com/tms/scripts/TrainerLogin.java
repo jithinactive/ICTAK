@@ -16,7 +16,7 @@ public class TrainerLogin extends TestBase {
 	//creating an object of TrainerElements class
 	TrainerElements objElmt;
 	
-	@Test(priority = 11,enabled = false)
+	@Test(priority = 11,enabled = true)
 	public void invalidEmailPass() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
@@ -36,7 +36,7 @@ public class TrainerLogin extends TestBase {
 		
 	}
 	
-	@Test(priority = 12,enabled = false)
+	@Test(priority = 12,enabled = true)
 	public void invalidEmail() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
@@ -55,7 +55,7 @@ public class TrainerLogin extends TestBase {
 		Assert.assertEquals(expAlert,actAlert);
 	}
 	
-	@Test(priority = 13,enabled = false)
+	@Test(priority = 13,enabled = true)
 	public void invalidPass() throws IOException {
 		
 		objElmt = new TrainerElements(driver);

@@ -15,37 +15,33 @@ public class TestBase {
 	
 	public static WebDriver driver;
 	public static Properties prop = null;
+	
 	String driverPath1;
 	String driverPath2;
 	
-	public static void TestConfig() {
+	public static void TestConfig(){
 		
-	
-			
-			prop=new Properties();
 		
+		    prop=new Properties();
+		    
 			FileInputStream ip;
-			try {
-				ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/" + "config.properties");
-				
-				prop.load(ip);
-				
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
-				
+				try {
+					ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/" + "config.properties");
+					prop.load(ip);
+					
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		
 	}
 	
 	@BeforeTest
 	public void onSetup() throws FileNotFoundException{
-			
-		TestConfig();
+			TestConfig();
 		
 		String browserName = prop.getProperty("browser");
 		driverPath1 = System.getProperty("user.dir")+"/drivers/chromedriver.exe";
@@ -65,7 +61,6 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-	
 	@AfterTest
 	public void quitBrowser() throws Exception {
 		Thread.sleep(10000);
@@ -73,5 +68,6 @@ public class TestBase {
 			driver.quit();
 		}
 	}
+
 
 }
