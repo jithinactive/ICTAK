@@ -18,11 +18,12 @@ public class TrainerProfile extends TrainerLogin {
 	
 	//Checking Profile Info
 	@Test(priority = 15, enabled = true)
-	public void TrainerProfileInfo() throws IOException {
+	public void TrainerProfileInfo() throws IOException, InterruptedException {
 		
 		objElmt = new TrainerElements(driver);
 		String info = objElmt.ProfileCheck();
 		System.out.println(info);
+		Thread.sleep(2000);
 		
 	}
 	
