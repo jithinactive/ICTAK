@@ -20,16 +20,7 @@ public class TestBase {
 	
 	public static void TestConfig() {
 		
-	
-			
-			prop=new Properties();
-		
-			FileInputStream ip;
-			try {
-				ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/" + "config.properties");
-				
-				prop.load(ip);
-				
+
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -38,14 +29,11 @@ public class TestBase {
 				e.printStackTrace();
 			}
 		
-				
-		
+
 	}
 	
 	@BeforeTest
 	public void onSetup() throws FileNotFoundException{
-			
-		TestConfig();
 		
 		String browserName = prop.getProperty("browser");
 		driverPath1 = System.getProperty("user.dir")+"/drivers/chromedriver.exe";
@@ -65,7 +53,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-	
+
 	@AfterTest
 	public void quitBrowser() throws Exception {
 		Thread.sleep(10000);
