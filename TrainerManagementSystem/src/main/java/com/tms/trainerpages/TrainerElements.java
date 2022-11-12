@@ -116,12 +116,12 @@ public class TrainerElements {
 	}
 	
 	//entering company name
-	@FindBy(css = "#company_name")
-	public WebElement editCompany;
-	public void companyInput(String companyIn) {
-		editCompany.clear();
-		editCompany.sendKeys(companyIn);
-	}
+		@FindBy(css = "#company_name")
+		public WebElement editCompany;
+		public void companyInput(String companyIn) {
+			editCompany.clear();
+			editCompany.sendKeys(companyIn);
+		}
 	
 	//entering designation
 	@FindBy(css = "#designation")

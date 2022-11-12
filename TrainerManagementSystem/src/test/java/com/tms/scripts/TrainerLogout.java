@@ -8,7 +8,7 @@ public class TrainerLogout extends TrainerAllocation{
 
 	TrainerElements objElmt;
 	
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 18, enabled = true)
 	public void logginOut() {
 		
 		objElmt = new TrainerElements(driver);
