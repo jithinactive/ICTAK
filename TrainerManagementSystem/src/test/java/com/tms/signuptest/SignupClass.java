@@ -21,7 +21,7 @@ import com.tms.signuppage.SignUpElements;
 public class SignupClass extends TestBase {
 	SignUpElements objSign;
 	
-	@Test(priority=1)
+	@Test(priority=1, enabled = true)
 	public void details() throws IOException {
 		objSign=new SignUpElements(driver);
 		
@@ -83,10 +83,10 @@ public class SignupClass extends TestBase {
 		String repassVal=ExcelUtilitiesSignup.getCellData(2, 9);
 		objSign.setRePassword(repassVal);
 		
-//		objSign.clickSignup();
+		objSign.clickSignup();
  
 		
-		// driver.get("https://trainermanagement.herokuapp.com/signup");
+		
 		
 		 
 			
