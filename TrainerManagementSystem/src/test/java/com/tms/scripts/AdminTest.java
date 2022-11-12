@@ -100,16 +100,16 @@ public class AdminTest extends TestBase {
 		obj.FinalAllocBtn();
 	}
 	@Test(priority = 8,enabled = true)
-	public void allocView()
+	public void allocView() throws InterruptedException
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 		obj.ViewAlloc();
-		
+		Thread.sleep(5000);
 	}
 	@Test(priority = 9, enabled= false)
 	public void logout()
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 		obj.logOut();
 	}
 
