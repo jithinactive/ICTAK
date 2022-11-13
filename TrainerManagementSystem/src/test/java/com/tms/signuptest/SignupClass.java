@@ -75,6 +75,12 @@ SignUpElements objSign;
 		objSign.setRePassword(repassVal);
 		
 		objSign.clickSignup();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
  
 	    String expected_SignupMsg=Signupconstants.SIGNUPMSG;
 	    String actual_SignUpMsg=driver.switchTo().alert().getText();
@@ -82,6 +88,12 @@ SignUpElements objSign;
 	    
 	    Alert al = driver.switchTo().alert();
 	    al.accept();
+	    try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		}
 	
 

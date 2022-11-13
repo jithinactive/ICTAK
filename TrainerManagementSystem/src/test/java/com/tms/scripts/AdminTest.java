@@ -74,20 +74,21 @@ public class AdminTest extends TestBase {
 	@Test(priority = 6,enabled = true)
 	public void aprRejBuuttons() throws IOException
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.empTypeDrop("Internal");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AprBtn();
 		
 	}
 	@Test(priority = 7,enabled = true)
-	public void allocation()
+	public void allocation() throws InterruptedException
 	{
-		
+		obj=new AdminElements(driver);
+		Thread.sleep(5000);
 		obj.Alloc();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AllocLink("sansastark@gmail.com");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AllocBtn();
 		obj.idPrint();
 	}
@@ -98,7 +99,7 @@ public class AdminTest extends TestBase {
 		obj.allocDropCrs("FSD");
 		obj.allocDropCrs("CSA");
 		obj.allocDropCrs("DSA");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.allocDropBatch("DSA001");
 		obj.timeSet();
 		obj.startDate();
@@ -112,7 +113,7 @@ public class AdminTest extends TestBase {
 	public void allocView() throws InterruptedException
 	{
 		obj.ViewAlloc();
-		Thread.sleep(25000);
+		Thread.sleep(15000);
 		
 	}
 	@Test(priority = 10, enabled= true)

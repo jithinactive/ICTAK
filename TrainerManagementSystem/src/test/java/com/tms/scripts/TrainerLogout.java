@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.tms.trainerpages.TrainerElements;
 
-public class TrainerLogout extends TrainerAllocation{
+public class TrainerLogout extends TestBase{
 
 	TrainerElements objElmt;
 	

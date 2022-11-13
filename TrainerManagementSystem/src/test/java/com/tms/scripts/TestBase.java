@@ -59,7 +59,7 @@ public class TestBase {
 		
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
 	@AfterTest
 	public void quitBrowser() throws Exception {

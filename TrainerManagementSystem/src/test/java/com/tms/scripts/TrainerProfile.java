@@ -9,7 +9,7 @@ import org.testng.internal.Utils;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerProfile extends TrainerLogin {
+public class TrainerProfile extends TestBase {
 	
 
 	//creating an object of TrainerElements class
