@@ -18,11 +18,12 @@ public class TrainerProfile extends TrainerLogin {
 	
 	//Checking Profile Info
 	@Test(priority = 15, enabled = true)
-	public void TrainerProfileInfo() throws IOException {
+	public void TrainerProfileInfo() throws IOException, InterruptedException {
 		
 		objElmt = new TrainerElements(driver);
 		String info = objElmt.ProfileCheck();
 		System.out.println(info);
+		Thread.sleep(2000);
 		
 	}
 	
@@ -61,14 +62,14 @@ public class TrainerProfile extends TrainerLogin {
 		objElmt.designationInput(putDesig);
 		
 		//uploading photo
-		File ProfileImage = new File(System.getProperty("user.dir") +"/src/main/resources/" + "profile2.jpg");
+		File ProfileImage = new File(System.getProperty("user.dir") +"/src/main/resources/" + "sansa2.jpg");
 		Utils.log("file exists: " + ProfileImage.exists());
 		String ProfileimagePath = ProfileImage.getAbsolutePath();
 		objElmt.photoInput(ProfileimagePath);
 		
 		//clicking edit button
 		objElmt.saveButton();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	
 		
 	}

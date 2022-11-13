@@ -39,6 +39,8 @@ public class AdminElements {
 		linkLogin.click();
 	}
 	
+	
+	
 	@FindBy(name = "email")
 	public WebElement email;
 	public void loginId(String logid)

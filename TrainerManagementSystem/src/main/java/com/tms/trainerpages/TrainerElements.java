@@ -1,7 +1,5 @@
 package com.tms.trainerpages;
 
-import java.io.File;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -115,7 +113,13 @@ public class TrainerElements {
 		editSkill.sendKeys(skillIn);
 	}
 	
-
+	//entering company name
+		@FindBy(css = "#company_name")
+		public WebElement editCompany;
+		public void companyInput(String companyIn) {
+			editCompany.clear();
+			editCompany.sendKeys(companyIn);
+		}
 	
 	//entering designation
 	@FindBy(css = "#designation")
@@ -173,51 +177,52 @@ public class TrainerElements {
 		stpdate = stopdate.getText();
 		return stpdate;
 	}
-	
 	//finding time in trainer allocation
-	@FindBy(xpath = "/html/body/app-root/app-allocation-details-page/div/div/div/div/div/div[2]/table/tr[3]/td[2]")
-	public WebElement time;
-	public String TimeCheck() {
-		String realTime;
-		realTime = time.getText();
-		return realTime;
-	}
-	
-	//finding course id in trainer allocation
-	@FindBy(xpath = "/html/body/app-root/app-allocation-details-page/div/div/div/div/div/div[2]/table/tr[5]/td[2]")
-	public WebElement courseid;
-	public String CourseidCheck() {
-		String realid;
-		realid = courseid.getText();
-		return realid;
-	}
-	
-	//finding batch id in trainer allocation
-	@FindBy(xpath ="/html/body/app-root/app-allocation-details-page/div/div/div/div/div/div[2]/table/tr[6]/td[2]")
-	public WebElement batchid;
-	public String Batchidcheck() {
-		String realbatch;
-		realbatch = batchid.getText();
-		return realbatch;
-	}
-	
-	
-	
-	/*
-	@FindBy(xpath="/html/body/app-root/app-sign-up/form/div[5]/div[2]/ng-multiselect-dropdown/div/div[1]/span")
-	 
-	private WebElement dropdown;
-	public void menu()
-	{
-		dropdown.click();
-	}
-	
-	@FindBy(css="li.multiselect-item-checkbox:nth-child(1) > div")
-	private WebElement selection;
-	public void course() {
-		selection.click();
-	}
-	*/
-	
-	
+		@FindBy(xpath = "/html/body/app-root/app-allocation-details-page/div/div/div/div/div/div[2]/table/tr[3]/td[2]")
+		public WebElement time;
+		public String TimeCheck() {
+			String realTime;
+			realTime = time.getText();
+			return realTime;
+		}
+		
+		//finding course id in trainer allocation
+		@FindBy(xpath = "/html/body/app-root/app-allocation-details-page/div/div/div/div/div/div[2]/table/tr[5]/td[2]")
+		public WebElement courseid;
+		public String CourseidCheck() {
+			String realid;
+			realid = courseid.getText();
+			return realid;
+		}
+		
+		//finding batch id in trainer allocation
+		@FindBy(xpath ="/html/body/app-root/app-allocation-details-page/div/div/div/div/div/div[2]/table/tr[6]/td[2]")
+		public WebElement batchid;
+		public String Batchidcheck() {
+			String realbatch;
+			realbatch = batchid.getText();
+			return realbatch;
+		}
+		
+		
+		
+		/*
+		@FindBy(xpath="/html/body/app-root/app-sign-up/form/div[5]/div[2]/ng-multiselect-dropdown/div/div[1]/span")
+		 
+		private WebElement dropdown;
+		public void menu()
+		{
+			dropdown.click();
+		}
+		
+		@FindBy(css="li.multiselect-item-checkbox:nth-child(1) > div")
+		private WebElement selection;
+		public void course() {
+			selection.click();
+		}
+		*/
 }
+
+
+	
+

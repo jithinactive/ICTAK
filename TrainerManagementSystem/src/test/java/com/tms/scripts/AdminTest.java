@@ -17,22 +17,24 @@ public class AdminTest extends TestBase {
 	//creating an object of AdminElements class
 	AdminElements obj;
 	
-	@Test(priority = 1,enabled = true)
+	@Test(priority = 2,enabled = true)
 	public void invalidMail() throws IOException
 	{
 		obj=new AdminElements(driver);
-		driver.navigate().refresh();
+		obj.linkLoginClick();
+		//driver.navigate().refresh();
 		//creating variables
 		String id=ExcelUtil.getCellData(2, 0);
 		String pass=ExcelUtil.getCellData(2, 1);
 		//executing
-		obj.linkLoginClick();
+		
+		
 		obj.loginId(id);
 		obj.passwd(pass);
 		obj.SignInButton();
 	}
 	
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 3,enabled = true)
 	public void invalidPass() throws IOException
 	{
 		obj=new AdminElements(driver);
@@ -44,7 +46,7 @@ public class AdminTest extends TestBase {
 		obj.SignInButton();
 	}
 	
-	@Test(priority = 3,enabled = true)
+	@Test(priority = 4,enabled = true)
 	public void invalidMailPass() throws IOException
 	{
 		obj=new AdminElements(driver);
@@ -56,10 +58,11 @@ public class AdminTest extends TestBase {
 		obj.SignInButton();
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 5, enabled = true)
 	public void successLog() throws IOException
 	{
 		obj=new AdminElements(driver);
+		
 		driver.navigate().refresh();
 		String id=ExcelUtil.getCellData(5, 0);
 		String pass=ExcelUtil.getCellData(5, 1);
@@ -68,34 +71,34 @@ public class AdminTest extends TestBase {
 		obj.passwd(pass);
 		obj.SignInButton();
 	}
-	@Test(priority = 5,enabled = true)
+	@Test(priority = 6,enabled = true)
 	public void aprRejBuuttons() throws IOException
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.empTypeDrop("Internal");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AprBtn();
 		
 	}
-	@Test(priority = 6,enabled = true)
+	@Test(priority = 7,enabled = true)
 	public void allocation()
 	{
 		
 		obj.Alloc();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
-		obj.AllocLink("nevin@gmail.com");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		obj.AllocLink("sansastark@gmail.com");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AllocBtn();
 		obj.idPrint();
 	}
-	@Test(priority= 7,enabled = true)
+	@Test(priority= 8,enabled = true)
 	public void fill()
 	{
 		obj.allocDropCrs("RPA");
 		obj.allocDropCrs("FSD");
 		obj.allocDropCrs("CSA");
 		obj.allocDropCrs("DSA");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.allocDropBatch("DSA001");
 		obj.timeSet();
 		obj.startDate();
@@ -105,14 +108,14 @@ public class AdminTest extends TestBase {
 		obj.MeetLink();
 		//obj.FinalAllocBtn();
 	}
-	@Test(priority = 8,enabled = true)
+	@Test(priority = 9,enabled = true)
 	public void allocView() throws InterruptedException
 	{
 		obj.ViewAlloc();
 		Thread.sleep(25000);
 		
 	}
-	@Test(priority = 9, enabled= true)
+	@Test(priority = 10, enabled= true)
 	public void logout()
 	{
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
