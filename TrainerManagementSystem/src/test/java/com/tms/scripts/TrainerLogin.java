@@ -44,7 +44,7 @@ public class TrainerLogin extends TestBase {
 		String Email = ExcelUtility.getCellData(3, 0);
 		String Pass = ExcelUtility.getCellData(3, 1);
 		
-		objElmt.LoginClick();
+//		objElmt.LoginClick();
 		objElmt.emailInput(Email);
 		objElmt.passwd(Pass);
 		objElmt.SignInButton();
@@ -63,7 +63,7 @@ public class TrainerLogin extends TestBase {
 		String Email = ExcelUtility.getCellData(4, 0);
 		String Pass = ExcelUtility.getCellData(4, 1);
 		
-		objElmt.LoginClick();
+//		objElmt.LoginClick();
 		objElmt.emailInput(Email);
 		objElmt.passwd(Pass);
 		objElmt.SignInButton();
@@ -82,7 +82,7 @@ public class TrainerLogin extends TestBase {
 		String Email = ExcelUtility.getCellData(5, 0);
 		String Pass = ExcelUtility.getCellData(5, 1);
 		
-		objElmt.LoginClick();
+//		objElmt.LoginClick();
 		objElmt.emailInput(Email);
 		objElmt.passwd(Pass);
 		objElmt.SignInButton();

@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -38,6 +39,8 @@ public class AdminElements {
 	{
 		linkLogin.click();
 	}
+	
+	
 	
 	@FindBy(name = "email")
 	public WebElement email;
@@ -74,11 +77,14 @@ public class AdminElements {
 		List<WebElement> row=driver.findElements(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr/td[9]"));
 		System.out.println("Rows=========="+row.size());
 		WebElement AprBtn=driver.findElement(By.cssSelector("body > app-root > app-admindash > div > div > table > tbody > tr:nth-child("+row.size()+") > td:nth-child(9) > a.btn.btn-success"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 		System.out.println(AprBtn.getText());
 //		Actions action=new Actions(driver);
 //		action.moveToElement(driver.findElement(By.xpath("/html/body/app-root/app-admindash/div/div/table/tbody/tr["+row.size()+"]/td[9]/a[2]"))).build().perform();
-		AprBtn.click();
+		JavascriptExecutor js2 = (JavascriptExecutor) driver;
+    	js2.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent"
+    				+ "('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", AprBtn);
+		//AprBtn.click();
 	}
 	@FindBy(xpath = "//*[@id=\"navbarNav\"]/ul/li[2]/a")
 	public WebElement allocLink;
