@@ -20,6 +20,12 @@ public class TrainerLogin extends TestBase {
 	public void invalidEmailPass() throws IOException {
 		
 		objElmt = new TrainerElements(driver);
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//creating variables
 		String Email = ExcelUtility.getCellData(2, 0);
 		String Pass = ExcelUtility.getCellData(2, 1);
