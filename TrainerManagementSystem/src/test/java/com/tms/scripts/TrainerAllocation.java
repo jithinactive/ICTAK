@@ -18,7 +18,7 @@ public class TrainerAllocation extends TestBase {
 		objElmt = new TrainerElements(driver);
 		
 		objElmt.myAlloc();
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		
 		/*
 		String actStDate = objElmt.StartDateCheck();

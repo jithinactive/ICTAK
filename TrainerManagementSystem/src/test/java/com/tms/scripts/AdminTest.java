@@ -87,16 +87,20 @@ public class AdminTest extends TestBase {
 		Thread.sleep(5000);
 		obj.Alloc();
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		obj.AllocLink("1sansastark@gmail.com");
+		obj.AllocLink("sansa.stark@gmail.com");
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AllocBtn();
-		obj.idPrint();
+		
+		
 	}
 	@Test(priority= 8,enabled = true)
-	public void fill()
+	public void fill() throws InterruptedException
 	{
-		obj.allocDropCrs("RPA");
-		obj.allocDropCrs("FSD");
+//		obj.allocDropCrs("RPA");
+//		obj.allocDropCrs("FSD");
+		
+		Thread.sleep(3000);
+		obj.idPrint();
 		obj.allocDropCrs("CSA");
 		obj.allocDropCrs("DSA");
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -107,7 +111,8 @@ public class AdminTest extends TestBase {
 		obj.endDate();
 		obj.endDate();
 		obj.MeetLink();
-		//obj.FinalAllocBtn();
+		Thread.sleep(3000);
+		obj.FinalAllocBtn();
 	}
 	@Test(priority = 9,enabled = true)
 	public void allocView() throws InterruptedException
