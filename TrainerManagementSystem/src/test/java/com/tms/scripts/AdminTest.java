@@ -87,7 +87,7 @@ public class AdminTest extends TestBase {
 		Thread.sleep(5000);
 		obj.Alloc();
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		obj.AllocLink("sansastark@gmail.com");
+		obj.AllocLink("1sansastark@gmail.com");
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AllocBtn();
 		obj.idPrint();
