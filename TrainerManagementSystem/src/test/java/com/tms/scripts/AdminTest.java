@@ -95,9 +95,9 @@ public class AdminTest extends TestBase {
 	@Test(priority= 8,enabled = true)
 	public void fill()
 	{
-		obj.allocDropCrs("RPA");
-		obj.allocDropCrs("FSD");
-		obj.allocDropCrs("CSA");
+//		obj.allocDropCrs("RPA");
+//		obj.allocDropCrs("FSD");
+//		obj.allocDropCrs("CSA");
 		obj.allocDropCrs("DSA");
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.allocDropBatch("DSA001");
@@ -107,7 +107,7 @@ public class AdminTest extends TestBase {
 		obj.endDate();
 		obj.endDate();
 		obj.MeetLink();
-		//obj.FinalAllocBtn();
+		obj.FinalAllocBtn();
 	}
 	@Test(priority = 9,enabled = true)
 	public void allocView() throws InterruptedException
