@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 //import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -62,7 +63,7 @@ SignUpElements objSign;
 		
 		
 		//Photo upload
-		File strimage = new File(System.getProperty("user.dir")+"/src/main/resources/"+"ProfImage.jpg");
+		File strimage = new File(System.getProperty("user.dir")+"/src/main/resources/"+"sansa.jpg");
 		String imgLoad = strimage.getAbsolutePath();
 		objSign.profPic(imgLoad);
 		
@@ -78,6 +79,9 @@ SignUpElements objSign;
 	    String expected_SignupMsg=Signupconstants.SIGNUPMSG;
 	    String actual_SignUpMsg=driver.switchTo().alert().getText();
 	    Assert.assertEquals(expected_SignupMsg, actual_SignUpMsg);
+	    
+	    Alert al = driver.switchTo().alert();
+	    al.accept();
 		}
 	
 

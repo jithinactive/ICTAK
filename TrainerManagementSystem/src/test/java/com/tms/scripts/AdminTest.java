@@ -21,12 +21,14 @@ public class AdminTest extends TestBase {
 	public void invalidMail() throws IOException
 	{
 		obj=new AdminElements(driver);
-		driver.navigate().refresh();
+		obj.linkLoginClick();
+		//driver.navigate().refresh();
 		//creating variables
 		String id=ExcelUtil.getCellData(2, 0);
 		String pass=ExcelUtil.getCellData(2, 1);
 		//executing
-		obj.linkLoginClick();
+		
+		
 		obj.loginId(id);
 		obj.passwd(pass);
 		obj.SignInButton();
@@ -60,6 +62,7 @@ public class AdminTest extends TestBase {
 	public void successLog() throws IOException
 	{
 		obj=new AdminElements(driver);
+		
 		driver.navigate().refresh();
 		String id=ExcelUtil.getCellData(5, 0);
 		String pass=ExcelUtil.getCellData(5, 1);
@@ -71,9 +74,9 @@ public class AdminTest extends TestBase {
 	@Test(priority = 6,enabled = true)
 	public void aprRejBuuttons() throws IOException
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.empTypeDrop("Internal");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AprBtn();
 		
 	}
@@ -82,9 +85,9 @@ public class AdminTest extends TestBase {
 	{
 		
 		obj.Alloc();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
-		obj.AllocLink("nevin@gmail.com");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		obj.AllocLink("sansastark@gmail.com");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.AllocBtn();
 		obj.idPrint();
 	}
@@ -95,7 +98,7 @@ public class AdminTest extends TestBase {
 		obj.allocDropCrs("FSD");
 		obj.allocDropCrs("CSA");
 		obj.allocDropCrs("DSA");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		obj.allocDropBatch("DSA001");
 		obj.timeSet();
 		obj.startDate();
