@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerAllocation extends TrainerProfile {
+public class TrainerAllocation extends TestBase {
 
 	TrainerElements objElmt;
 	
@@ -16,9 +16,9 @@ public class TrainerAllocation extends TrainerProfile {
 	public void allocCheck() throws IOException, InterruptedException {
 		
 		objElmt = new TrainerElements(driver);
-	
+		
 		objElmt.myAlloc();
-		 Thread.sleep(5000);
+		Thread.sleep(5000);
 		
 		/*
 		String actStDate = objElmt.StartDateCheck();
