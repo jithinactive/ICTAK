@@ -143,6 +143,12 @@ public class TrainerElements {
 	@FindBy(css = ".btn")
 	public WebElement saveEdit;
 	public void saveButton() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		saveEdit.sendKeys(Keys.RETURN);
 	}
 	

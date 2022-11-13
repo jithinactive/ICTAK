@@ -9,7 +9,7 @@ import org.testng.internal.Utils;
 import com.tms.trainerpages.TrainerElements;
 import com.tms.trainerutilities.ExcelUtility;
 
-public class TrainerProfile extends TrainerLogin {
+public class TrainerProfile extends TestBase {
 	
 
 	//creating an object of TrainerElements class
@@ -62,14 +62,14 @@ public class TrainerProfile extends TrainerLogin {
 		objElmt.designationInput(putDesig);
 		
 		//uploading photo
-		File ProfileImage = new File(System.getProperty("user.dir") +"/src/main/resources/" + "profile2.jpg");
+		File ProfileImage = new File(System.getProperty("user.dir") +"/src/main/resources/" + "sansa2.jpg");
 		Utils.log("file exists: " + ProfileImage.exists());
 		String ProfileimagePath = ProfileImage.getAbsolutePath();
 		objElmt.photoInput(ProfileimagePath);
 		
 		//clicking edit button
 		objElmt.saveButton();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	
 		
 	}
